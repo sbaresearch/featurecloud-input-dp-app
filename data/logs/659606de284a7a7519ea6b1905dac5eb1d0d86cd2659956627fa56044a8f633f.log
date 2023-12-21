@@ -1,0 +1,35 @@
+2023-12-19 20:14:21,365 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-19 20:14:21,367 INFO supervisord started with pid 7
+2023-12-19 20:14:22,368 INFO spawned: 'app' with pid 8
+2023-12-19 20:14:22,369 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-19 20:14:23,812 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-19 20:14:23,816 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 19.12.23 20:14:25] [Level: info] id: 0f11e9ff76c1db95
+[Time: 19.12.23 20:14:25] [Level: info] coordinator: True
+[Time: 19.12.23 20:14:25] [Level: info] clients: ['0f11e9ff76c1db95']
+[Time: 19.12.23 20:14:25] [Level: info] state: initial
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] Update
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] Reding config file
+127.0.0.1 - - [19/Dec/2023 20:14:25] "POST /api/setup HTTP/1.0" 200 0
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] DP method: input_dp_new_paradigm
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] epsilon: 10
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] delta: 0.001
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] data: data100.csv
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] Reading data ...
+127.0.0.1 - - [19/Dec/2023 20:14:25] "GET /api/status HTTP/1.0" 200 155
+[Time: 19.12.23 20:14:25] [Level: info] [State: initial] data size:(100, 167)
+[Time: 19.12.23 20:14:25] [Level: info] Traceback (most recent call last):
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 251, in guarded_run
+    self.run()
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 270, in run
+    transition = self.current_state.run()
+  File "/app/states.py", line 53, in run
+    noised_data = algo.input_DP_new_paradigm()
+TypeError: input_DP_new_paradigm() missing 5 required positional arguments: 'data', 'epsilon', 'delta', 'sensitivity', and 'iterations'
+
+127.0.0.1 - - [19/Dec/2023 20:14:28] "GET /api/status HTTP/1.0" 200 159

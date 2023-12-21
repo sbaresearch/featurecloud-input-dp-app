@@ -1,0 +1,27 @@
+2023-12-19 19:32:21,519 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-19 19:32:21,520 INFO supervisord started with pid 7
+2023-12-19 19:32:22,521 INFO spawned: 'app' with pid 8
+2023-12-19 19:32:22,522 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-19 19:32:23,744 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-19 19:32:23,745 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 19.12.23 19:32:25] [Level: info] id: 9b41feb3d2b1ac59
+[Time: 19.12.23 19:32:25] [Level: info] coordinator: True
+[Time: 19.12.23 19:32:25] [Level: info] clients: ['9b41feb3d2b1ac59']
+[Time: 19.12.23 19:32:25] [Level: info] state: initial
+[Time: 19.12.23 19:32:25] [Level: info] [State: initial] Update
+127.0.0.1 - - [19/Dec/2023 19:32:25] "POST /api/setup HTTP/1.0" 200 0
+[Time: 19.12.23 19:32:25] [Level: info] [State: initial] Reding config file...
+[Time: 19.12.23 19:32:25] [Level: info] transition: write
+127.0.0.1 - - [19/Dec/2023 19:32:25] "GET /api/status HTTP/1.0" 200 153
+[Time: 19.12.23 19:32:26] [Level: info] state: write
+[Time: 19.12.23 19:32:26] [Level: info] [State: write] Write computation...
+[Time: 19.12.23 19:32:26] [Level: info] transition: terminal
+127.0.0.1 - - [19/Dec/2023 19:32:28] "GET /api/status HTTP/1.0" 200 156
+127.0.0.1 - - [19/Dec/2023 19:32:31] "GET /api/status HTTP/1.0" 200 156
+127.0.0.1 - - [19/Dec/2023 19:32:34] "GET /api/status HTTP/1.0" 200 156
+127.0.0.1 - - [19/Dec/2023 19:32:37] "GET /api/status HTTP/1.0" 200 154

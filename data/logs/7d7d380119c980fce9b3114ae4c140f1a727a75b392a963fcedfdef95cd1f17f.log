@@ -1,0 +1,34 @@
+2023-12-19 17:40:15,663 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-19 17:40:15,664 INFO supervisord started with pid 7
+2023-12-19 17:40:16,670 INFO spawned: 'app' with pid 8
+2023-12-19 17:40:16,673 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-19 17:40:17,874 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-19 17:40:17,874 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 19.12.23 17:40:19] [Level: info] id: 1e30688ab20a6513
+[Time: 19.12.23 17:40:19] [Level: info] coordinator: False
+[Time: 19.12.23 17:40:19] [Level: info] clients: ['cc7e82e7815e4772', '1e30688ab20a6513']
+[Time: 19.12.23 17:40:19] [Level: info] state: initial
+[Time: 19.12.23 17:40:19] [Level: info] [State: initial] Reding config file
+127.0.0.1 - - [19/Dec/2023 17:40:19] "POST /api/setup HTTP/1.0" 200 0
+127.0.0.1 - - [19/Dec/2023 17:40:19] "GET /api/status HTTP/1.0" 200 155
+[Time: 19.12.23 17:40:19] [Level: info] Traceback (most recent call last):
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 251, in guarded_run
+    self.run()
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 270, in run
+    transition = self.current_state.run()
+  File "/app/states.py", line 24, in run
+    config = bios.read(f'{INPUT_DIR}/config.yml')
+  File "/root/.local/lib/python3.8/site-packages/bios/base.py", line 54, in read
+    return read_functions[file_type](file_name, delimiter)
+  File "/root/.local/lib/python3.8/site-packages/bios/base.py", line 47, in read_yaml
+    return io_object.read(file_name)
+  File "/root/.local/lib/python3.8/site-packages/bios/operations/yaml_io.py", line 7, in read
+    f = open(file_name, "r")
+FileNotFoundError: [Errno 2] No such file or directory: 'mnt/input/config.yml'
+
+127.0.0.1 - - [19/Dec/2023 17:40:22] "GET /api/status HTTP/1.0" 200 167

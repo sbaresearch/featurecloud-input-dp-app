@@ -1,0 +1,43 @@
+2023-12-19 15:25:04,199 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-19 15:25:04,200 INFO supervisord started with pid 7
+2023-12-19 15:25:05,205 INFO spawned: 'app' with pid 8
+2023-12-19 15:25:05,208 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-19 15:25:06,427 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-19 15:25:06,429 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 19.12.23 15:25:08] [Level: info] id: efa6f782f966be6d
+[Time: 19.12.23 15:25:08] [Level: info] coordinator: True
+[Time: 19.12.23 15:25:08] [Level: info] clients: ['efa6f782f966be6d']
+[Time: 19.12.23 15:25:08] [Level: info] state: initial
+[Time: 19.12.23 15:25:08] [Level: info] [State: initial] Reding config file
+127.0.0.1 - - [19/Dec/2023 15:25:08] "POST /api/setup HTTP/1.0" 200 0
+[Time: 19.12.23 15:25:08] [Level: info] [State: initial] data: data100.csv
+[Time: 19.12.23 15:25:08] [Level: info] [State: initial] Reading data ...
+127.0.0.1 - - [19/Dec/2023 15:25:08] "GET /api/status HTTP/1.0" 200 155
+[Time: 19.12.23 15:25:08] [Level: info] [State: initial] data size:(100, 167)
+[Time: 19.12.23 15:25:08] [Level: info] transition: write
+[Time: 19.12.23 15:25:09] [Level: info] state: write
+[Time: 19.12.23 15:25:09] [Level: info] [State: write] Write computation...
+[Time: 19.12.23 15:25:09] [Level: info] transition: terminal
+127.0.0.1 - - [19/Dec/2023 15:25:11] "GET /api/status HTTP/1.0" 200 156
+[CTRL] POST /setup
+[Time: 19.12.23 15:25:14] [Level: info] id: 40bc3ea40ba24e3d
+[Time: 19.12.23 15:25:14] [Level: info] coordinator: True
+[Time: 19.12.23 15:25:14] [Level: info] clients: ['40bc3ea40ba24e3d']
+[Time: 19.12.23 15:25:14] [Level: info] state: initial
+[Time: 19.12.23 15:25:14] [Level: info] [State: initial] Reding config file
+[Time: 19.12.23 15:25:14] [Level: info] [State: initial] data: data100.csv
+[Time: 19.12.23 15:25:14] [Level: info] [State: initial] Reading data ...
+127.0.0.1 - - [19/Dec/2023 15:25:14] "POST /api/setup HTTP/1.0" 200 0
+127.0.0.1 - - [19/Dec/2023 15:25:14] "GET /api/status HTTP/1.0" 200 156
+[Time: 19.12.23 15:25:14] [Level: info] [State: initial] data size:(100, 167)
+[Time: 19.12.23 15:25:14] [Level: info] transition: write
+[Time: 19.12.23 15:25:15] [Level: info] state: write
+[Time: 19.12.23 15:25:15] [Level: info] [State: write] Write computation...
+[Time: 19.12.23 15:25:15] [Level: info] transition: terminal
+127.0.0.1 - - [19/Dec/2023 15:25:17] "GET /api/status HTTP/1.0" 200 156
+127.0.0.1 - - [19/Dec/2023 15:25:20] "GET /api/status HTTP/1.0" 200 154

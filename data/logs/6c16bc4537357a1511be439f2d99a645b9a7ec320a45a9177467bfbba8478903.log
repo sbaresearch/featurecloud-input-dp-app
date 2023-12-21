@@ -1,0 +1,35 @@
+2023-12-07 13:47:20,768 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-07 13:47:20,769 INFO supervisord started with pid 7
+2023-12-07 13:47:21,775 INFO spawned: 'app' with pid 8
+2023-12-07 13:47:21,778 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-07 13:47:22,877 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-07 13:47:22,877 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 07.12.23 13:47:24] [Level: info] id: 5172291bef8fdcf0
+[Time: 07.12.23 13:47:24] [Level: info] coordinator: True
+[Time: 07.12.23 13:47:24] [Level: info] clients: ['5172291bef8fdcf0']
+[Time: 07.12.23 13:47:24] [Level: info] state: initial
+127.0.0.1 - - [07/Dec/2023 13:47:24] "POST /api/setup HTTP/1.0" 200 0
+[Time: 07.12.23 13:47:24] [Level: info] [State: initial] Transition to compute state...
+[Time: 07.12.23 13:47:24] [Level: info] transition: compute
+[CTRL] GET /status
+127.0.0.1 - - [07/Dec/2023 13:47:24] "GET /api/status HTTP/1.0" 200 141
+[Time: 07.12.23 13:47:25] [Level: info] state: compute
+[Time: 07.12.23 13:47:25] [Level: info] [State: compute] Start computation...
+[Time: 07.12.23 13:47:25] [Level: info] transition: write
+[Time: 07.12.23 13:47:26] [Level: info] state: write
+[Time: 07.12.23 13:47:26] [Level: info] [State: write] Write computation...
+[Time: 07.12.23 13:47:26] [Level: info] transition: terminal
+[Time: 07.12.23 13:47:26] [Level: info] done
+[CTRL] GET /status
+127.0.0.1 - - [07/Dec/2023 13:47:27] "GET /api/status HTTP/1.0" 200 141
+[CTRL] GET /status
+127.0.0.1 - - [07/Dec/2023 13:47:30] "GET /api/status HTTP/1.0" 200 141
+[CTRL] GET /status
+127.0.0.1 - - [07/Dec/2023 13:47:33] "GET /api/status HTTP/1.0" 200 141
+[CTRL] GET /status
+127.0.0.1 - - [07/Dec/2023 13:47:36] "GET /api/status HTTP/1.0" 200 140

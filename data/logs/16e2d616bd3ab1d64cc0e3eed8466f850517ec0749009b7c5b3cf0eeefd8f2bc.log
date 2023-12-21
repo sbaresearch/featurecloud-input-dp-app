@@ -1,0 +1,27 @@
+2023-12-07 13:36:01,254 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-12-07 13:36:01,255 INFO supervisord started with pid 7
+2023-12-07 13:36:02,257 INFO spawned: 'app' with pid 8
+2023-12-07 13:36:02,259 INFO spawned: 'nginx' with pid 9
+Bottle v0.12.25 server starting up (using WSGIRefServer())...
+Listening on http://localhost:5000/
+Hit Ctrl-C to quit.
+
+2023-12-07 13:36:03,360 INFO success: app entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-07 13:36:03,362 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+[CTRL] POST /setup
+[Time: 07.12.23 13:36:05] [Level: info] id: f67b4b874f5c529c
+[Time: 07.12.23 13:36:05] [Level: info] coordinator: True
+[Time: 07.12.23 13:36:05] [Level: info] clients: ['f67b4b874f5c529c']
+[Time: 07.12.23 13:36:05] [Level: info] state: initial
+127.0.0.1 - - [07/Dec/2023 13:36:05] "POST /api/setup HTTP/1.0" 200 0
+[Time: 07.12.23 13:36:05] [Level: info] Traceback (most recent call last):
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 226, in guarded_run
+    self.run()
+  File "/root/.local/lib/python3.8/site-packages/FeatureCloud/app/engine/app.py", line 241, in run
+    transition = self.current_state.run()
+  File "/app/states.py", line 14, in run
+    raise NotImplemented # remove this when you finnish implementation
+TypeError: exceptions must derive from BaseException
+
+127.0.0.1 - - [07/Dec/2023 13:36:05] "GET /api/status HTTP/1.0" 200 145
+[CTRL] GET /status
