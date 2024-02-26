@@ -4,7 +4,9 @@ Differential Privacy through input perturbation
 
 ## Description
 
-Input DP app can be applied to mitigate risks of identity and membership disclosure from the data, as well as to protect local and global models in federated learning from inference attacks. Depending on the parameters like `epsilon` and `delta`, Input DP can result in central or local Differential Privacy.
+Input DP app can be applied to mitigate risks of identity and membership disclosure from the data, as well as to protect local and global models in federated learning from inference attacks. Depending on the parameters like `epsilon` and `delta`, Input DP can result in central or local Differential Privacy. 
+
+Input DP is applied individually by each client as a data-preprocessing step to prepare data for triaining models. 
 
 This app contains two methods for achieving input DP:
 
@@ -20,6 +22,8 @@ Too high values for `epsilon` and `delta` can result in gaining no meaningful pr
 ## Input
 
 * **data.csv** containing original dataset
+
+Data to test the app is provided in the current repo **data/data/adult.csv**
 
 ## Output
 
@@ -48,5 +52,6 @@ iterations: iterations # int, has to be more than 0. Number of iterations when t
 ## References
 
 [1] Fukuchi, K., Tran, Q.K., Sakuma, J. (2017).  Differentially Private  Empirical Risk Minimization with Input Perturbation.                       In: Yamamoto, A., Kida, T., Uno, T., Kuboyama, T.  (eds) Discovery Science. DS 2017. Lecture Notes in Computer Science(),  vol 10558. Springer, Cham. https://doi.org/10.1007/978-3-319-67786-6\_6
+
 [2] Kang,  Yilin, Yong Liu, Ben Niu, Xin-Yi Tong, Likun Zhang and Weiping Wang.  “Input Perturbation: A New Paradigm between Central and Local  Differential Privacy.” *ArXiv* abs/2002.08570 (2020): n. pag.
 
