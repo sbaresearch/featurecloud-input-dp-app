@@ -23,7 +23,7 @@ Too high values for `epsilon` and `delta` can result in gaining no meaningful pr
 
 * **data.csv** containing original dataset
 
-Data to test the app is provided in the current repo **data/data/adult.csv**
+Data to test the app is provided in the current repo **data/sample_data**
 
 ## Output
 
