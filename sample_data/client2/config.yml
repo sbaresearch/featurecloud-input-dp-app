@@ -1,0 +1,8 @@
+data: 'adult.csv'
+target_attribute: 'target'
+input_dp_method: 'input_dp_new_paradigm'
+epsilon: 0.1
+delta: 0.001
+noised_data: noised_data.csv
+sensitivity: 0.01
+iterations: 10
