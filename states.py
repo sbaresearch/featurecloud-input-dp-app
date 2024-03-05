@@ -22,6 +22,7 @@ class InitialState(AppState):
         self.log('Update')
         self.log('Reding config file')
         config = bios.read(f'{INPUT_DIR}/config.yml')
+        config = config["fc_input_dp"]
         input_file = config['data']
         target_attribute = config['target_attribute']
         input_dp_method = config['input_dp_method']

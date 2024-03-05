@@ -6,22 +6,24 @@ Differential Privacy through input perturbation
 
 Input DP app can be applied to mitigate risks of identity and membership disclosure from the data, as well as to protect local and global models in federated learning from inference attacks. Depending on the parameters like `epsilon` and `delta`, Input DP can result in central or local Differential Privacy. 
 
-Input DP is applied individually by each client as a data-preprocessing step to prepare data for triaining models. 
+Input DP is applied individually by each client as a data-preprocessing step to prepare data for training models. 
 
 This app contains two methods for achieving input DP:
 
 1. **'input_dp'**: the method based on [1]. Use for achieving local differential privacy (stronger privacy, but more utility loss)
-2. **input_dp_new_paradigm**: the method based on [23]. Use to achieve central differential privacy after federated learning (weaker privacy, less utility loss). Central DP results in a differentially privacy global model
+2. **input_dp_new_paradigm**: the method based on [2]. Use to achieve central differential privacy after federated learning (weaker privacy, less utility loss). Central DP results in a differentially private global model
 
 Choose `delta` << 1/n, where n is the size of the dataset
+
 The closer `epsilon` to 0, the higher the privacy of the noised_data
+
 Too high values for `epsilon` and `delta` can result in gaining no meaningful privacy!
 
 `sensitivity` and `iterations` parameters have to be specified only for the method  **input_dp_new_paradigm**
 
 ## Input
 
-* **data.csv** containing original dataset
+* **data.csv** containing the original dataset
 
 Data to test the app is provided in the current repo **data/sample_data**
 
@@ -35,18 +37,19 @@ Data to test the app is provided in the current repo **data/sample_data**
 * Post: various Analysis apps
 
 ## Config
-
 ```
-data: data.csv # path to the input file 
-noised_data: noised_data.csv #path to the output file
-target_attribute: label # name of the target attribute or an empty string
+fc_input_dp:
+    data: data.csv                  # path to the input file 
+    noised_data: noised_data.csv    # path to the output file
+    target_attribute: label         # name of the target attribute or an empty string
 
-input_dp_method: input_dp #one of two methods:  input_dp or input_dp_new_paradigm
-epsilon: epsilon # float, has to be more than 0
-delta: delta # float, has to be more than 0
+    input_dp_method: input_dp       # one of two methods:  input_dp or input_dp_new_paradigm
+    epsilon: epsilon                # float, has to be more than 0
+    delta: delta                    # float, has to be more than 0 and less than 1
 
-sensitivity: sensitivity # float, has to be more than 0. Sensitivity of the ML model used only with input_dp_new_paradigm
-iterations: iterations # int, has to be more than 0. Number of iterations when training ML model, used only with input_dp_new_paradigm
+    sensitivity: sensitivity        # float, has to be more than 0. Sensitivity of the ML model used only with input_dp_new_paradigm
+    iterations: iterations          # int, has to be more than 0. Number of iterations
+                                    # when training ML model, used only with input_dp_new_paradigm
 ```
 
 ## References
